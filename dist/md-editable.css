@@ -1,0 +1,10 @@
+md-editable label, md-editable .label {
+  margin-right: 8px;
+  font-weight: 600; }
+
+md-editable .button-edit {
+  opacity: 0;
+  transition: opacity 0.25s ease; }
+
+md-editable:hover .button-edit {
+  opacity: 100; }

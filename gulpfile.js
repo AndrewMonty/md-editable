@@ -15,22 +15,24 @@ gulp.task('scripts', function() {
 
     return merge(templateStream, angularStream)
         .pipe(concat('md-editable.js'))
-        .pipe(gulp.dest('./dist/js'));
+        .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('styles', function() {
     gulp.src('./src/app.scss')
         .pipe(glob())
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('./dist/css'));
+        .pipe(concat('md-editable.css'))
+        .pipe(gulp.dest('./dist'));
 })
 
 gulp.task('default',function() {
-    gulp.start('scripts');
+    gulp.start('scripts', 'styles');
 });
 
 gulp.task('watch', function() {
     gulp.watch('gulpfile.js', ['default']);
     gulp.watch('./src/**/*.js', ['scripts']);
     gulp.watch('./src/**/*.html', ['scripts']);
+    gulp.watch('./src/**/*.scss', ['styles']);
 });

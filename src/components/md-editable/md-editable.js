@@ -11,7 +11,7 @@ angular.module('amonty/mdEditable')
             mdeOptionValue: '<',
             onUpdate: '&'
         },
-        templateUrl: 'md-editable.html',
+        templateUrl: 'md-editable/md-editable.html',
         controller: function(filterFilter)
         {
             var ctrl = this;
