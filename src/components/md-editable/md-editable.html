@@ -6,7 +6,7 @@
         layout="row" layout-align="start center" flex>
         <span flex>{{ $ctrl.mdeValue }}</span>
         <md-button ng-if="$ctrl.editable"
-            class="md-icon-button button-edit"
+            class="md-icon-button mde-edit-button"
             ng-click="$ctrl.edit()">
             <md-icon md-svg-icon="pencil"></md-icon>
         </md-button>
@@ -14,7 +14,7 @@
 
     <div ng-if="$ctrl.editable" ng-show="$ctrl.editing"
         layout="row" layout-align="start center" flex>
-        <md-button class="md-icon-button"
+        <md-button class="md-icon-button mde-cancel-button"
             ng-click="$ctrl.cancel()">
             <md-icon md-svg-icon="close"></md-icon>
             <md-tooltip>cancel</md-tooltip>
@@ -49,7 +49,7 @@
             </md-not-found>
         </md-autocomplete>
 
-        <md-button class="md-icon-button"
+        <md-button class="md-icon-button mde-save-button"
             ng-click="$ctrl.update($ctrl.mdeProperty, $ctrl.newValue)"
             ng-disabled="!$ctrl.newValue">
             <md-icon md-svg-icon="content-save"></md-icon>
