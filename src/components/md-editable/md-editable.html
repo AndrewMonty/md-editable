@@ -1,0 +1,60 @@
+<div layout="row" layout-align="start center">
+
+    <label>{{ $ctrl.mdeLabel }}</label>
+
+    <div ng-hide="$ctrl.editing"
+        layout="row" layout-align="start center" flex>
+        <span flex>{{ $ctrl.mdeValue }}</span>
+        <md-button ng-if="$ctrl.editable"
+            class="md-icon-button button-edit"
+            ng-click="$ctrl.edit()">
+            <md-icon md-svg-icon="pencil"></md-icon>
+        </md-button>
+    </div>
+
+    <div ng-if="$ctrl.editable" ng-show="$ctrl.editing"
+        layout="row" layout-align="start center" flex>
+        <md-button class="md-icon-button"
+            ng-click="$ctrl.cancel()">
+            <md-icon md-svg-icon="close"></md-icon>
+            <md-tooltip>cancel</md-tooltip>
+        </md-button>
+
+        <md-input-container ng-if="$ctrl.mdeType=='text'" flex>
+            <input type="text" flex
+                ng-model="$ctrl.newValue" />
+        </md-input-container>
+
+        <md-select ng-if="$ctrl.mdeType=='select'" flex
+            ng-model="$ctrl.newValue">
+            <md-option ng-repeat="option in $ctrl.mdeOptions"
+                ng-value="option[$ctrl.mdeOptionValue]">
+                {{ option[$ctrl.mdeOptionDisplay] }}
+            </md-option>
+        </md-select>
+
+        <md-autocomplete ng-if="$ctrl.mdeType=='autocomplete'" flex
+            md-search-text="$ctrl.searchText"
+            md-search-text-change="$ctrl.onSearchTextChanged()"
+            md-selected-item="$ctrl.selectedItem"
+            md-selected-item-change="$ctrl.onSelectedItemChanged($ctrl.selectedItem)"
+            md-items="option in $ctrl.filteredOptions"
+            md-item-text="option[$ctrl.mdeOptionDisplay]"
+            md-min-length="0">
+            <md-item-template>
+                <span md-highlight-text="$ctrl.searchText" md-highlight-flags="^i">{{option[$ctrl.mdeOptionDisplay]}}</span>
+            </md-item-template>
+            <md-not-found>
+                No results matching "{{ctrl.searchText}}" were found.
+            </md-not-found>
+        </md-autocomplete>
+
+        <md-button class="md-icon-button"
+            ng-click="$ctrl.update($ctrl.mdeProperty, $ctrl.newValue)"
+            ng-disabled="!$ctrl.newValue">
+            <md-icon md-svg-icon="content-save"></md-icon>
+            <md-tooltip>save</md-tooltip>
+        </md-button>
+    </div>
+
+</div>

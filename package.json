@@ -1,0 +1,42 @@
+{
+  "name": "md-editable",
+  "version": "0.0.1",
+  "description": "Angular JS component for easy in-line editing using Angular Material input components",
+  "main": "dist/md-editable.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndrewMonty/md-editable.git"
+  },
+  "keywords": [
+    "angular",
+    "material",
+    "editable",
+    "edit",
+    "inline",
+    "input"
+  ],
+  "author": "Andrew Monty",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndrewMonty/md-editable/issues"
+  },
+  "homepage": "https://github.com/AndrewMonty/md-editable#readme",
+  "dependencies": {
+    "angular": "^1.5.11",
+    "angular-animate": "^1.5.11",
+    "angular-aria": "^1.5.11",
+    "angular-material": "^1.1.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-angular-templatecache": "^2.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-ng-annotate": "^2.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sass-glob": "^1.0.8",
+    "merge-stream": "^1.0.1"
+  }
+}

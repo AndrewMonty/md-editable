@@ -1,0 +1,17 @@
+md-editable {
+    label, .label {
+        margin-right: 8px;
+        font-weight: 600;
+    }
+
+    .button-edit {
+        opacity: 0;
+        transition: opacity 0.25s ease;
+    }
+
+    &:hover {
+        .button-edit {
+            opacity: 100;
+        }
+    }
+}
