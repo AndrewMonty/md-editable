@@ -1,4 +1,4 @@
-angular.module('amonty/mdEditable', [
+angular.module('md.editable', [
     'ngMaterial',
     'ngAnimate'
 ]);

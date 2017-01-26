@@ -8,12 +8,12 @@ var merge    = require('merge-stream');
 
 gulp.task('scripts', function() {
     var templateStream = gulp.src('./src/components/**/*.html')
-        .pipe(cache({standalone: true}));
+        .pipe(cache({ module: 'md.editable' }));
 
-    var angularStream = gulp.src('./src/**.*.js')
-        .pipe(annotate({remove: true, add: true, single_quotes: false}));
+    var angularStream = gulp.src('./src/**/*.js')
+        .pipe(annotate({ remove: true, add: true, single_quotes: false }));
 
-    return merge(templateStream, angularStream)
+    return merge(angularStream, templateStream)
         .pipe(concat('md-editable.js'))
         .pipe(gulp.dest('./dist'));
 });
