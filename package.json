@@ -1,6 +1,6 @@
 {
   "name": "md-editable",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Angular JS component for easy in-line editing using Angular Material input components",
   "main": "dist/md-editable.js",
   "scripts": {

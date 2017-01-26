@@ -4,13 +4,13 @@ md-editable {
         font-weight: 600;
     }
 
-    .button-edit {
+    .mde-edit-button {
         opacity: 0;
         transition: opacity 0.25s ease;
     }
 
     &:hover {
-        .button-edit {
+        .mde-edit-button {
             opacity: 100;
         }
     }
