@@ -22,6 +22,7 @@ angular.module('md.editable')
                 ctrl.editing = false;
                 ctrl.selectedItem = false;
                 ctrl.newValue = false;
+                ctrl.searchText = '';
                 filterOptions();
             }
 
