@@ -8,3 +8,6 @@ md-editable .mde-edit-button {
 
 md-editable:hover .mde-edit-button {
   opacity: 100; }
+
+md-editable md-input-container .md-errors-spacer {
+  display: none; }

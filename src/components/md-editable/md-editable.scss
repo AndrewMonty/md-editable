@@ -14,4 +14,8 @@ md-editable {
             opacity: 100;
         }
     }
+
+    md-input-container .md-errors-spacer {
+        display: none;
+    }
 }
