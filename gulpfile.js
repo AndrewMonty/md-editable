@@ -30,7 +30,7 @@ gulp.task('default', function() {
     gulp.start('scripts', 'styles');
 });
 
-gulp.task('demo', function() {
+gulp.task('docs', function() {
     gulp.src([
         './node_modules/angular/angular.min.js',
         './node_modules/angular-aria/angular-aria.min.js',
@@ -38,17 +38,17 @@ gulp.task('demo', function() {
         './node_modules/angular-material/angular-material.min.js'
     ])
         .pipe(concat('vendor.js'))
-        .pipe(gulp.dest('./demo/js'));
+        .pipe(gulp.dest('./docs/js'));
 
     gulp.src('./node_modules/angular-material/angular-material.min.css')
         .pipe(concat('vendor.css'))
-        .pipe(gulp.dest('./demo/css'));
+        .pipe(gulp.dest('./docs/css'));
 
     gulp.src('./dist/md-editable.js')
-        .pipe(gulp.dest('./demo/js'));
+        .pipe(gulp.dest('./docs/js'));
 
     gulp.src('./dist/md-editable.css')
-        .pipe(gulp.dest('./demo/css'));
+        .pipe(gulp.dest('./docs/css'));
 });
 
 gulp.task('watch', function() {
