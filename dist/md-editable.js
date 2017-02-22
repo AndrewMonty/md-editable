@@ -71,7 +71,7 @@ angular.module('md.editable')
             {
                 if (typeof selected != 'undefined' && selected != null)
                 {
-                    ctrl.newValue = selected[ctrl.mdeOptionValue];
+                    ctrl.newValue = selected;
                 }
             }
 

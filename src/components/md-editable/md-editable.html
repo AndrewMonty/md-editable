@@ -32,8 +32,7 @@
 
         <md-select ng-if="$ctrl.mdeType=='select'" flex
             ng-model="$ctrl.newValue">
-            <md-option ng-repeat="option in $ctrl.mdeOptions"
-                ng-value="option[$ctrl.mdeOptionValue]">
+            <md-option ng-repeat="option in $ctrl.mdeOptions" ng-value="option">
                 {{ option[$ctrl.mdeOptionDisplay] }}
             </md-option>
         </md-select>
