@@ -25,6 +25,11 @@
                 ng-model="$ctrl.newValue" />
         </md-input-container>
 
+        <md-input-container ng-if="$ctrl.mdeType=='number'" flex>
+            <input type="number" flex
+                ng-model="$ctrl.newValue" />
+        </md-input-container>
+
         <md-select ng-if="$ctrl.mdeType=='select'" flex
             ng-model="$ctrl.newValue">
             <md-option ng-repeat="option in $ctrl.mdeOptions"
