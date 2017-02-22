@@ -1,0 +1,13 @@
+md-editable label, md-editable .label {
+  margin-right: 8px;
+  font-weight: 600; }
+
+md-editable .mde-edit-button {
+  opacity: 0;
+  transition: opacity 0.25s ease; }
+
+md-editable:hover .mde-edit-button {
+  opacity: 100; }
+
+md-editable md-input-container .md-errors-spacer {
+  display: none; }

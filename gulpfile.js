@@ -24,10 +24,31 @@ gulp.task('styles', function() {
         .pipe(sass().on('error', sass.logError))
         .pipe(concat('md-editable.css'))
         .pipe(gulp.dest('./dist'));
-})
+});
 
-gulp.task('default',function() {
+gulp.task('default', function() {
     gulp.start('scripts', 'styles');
+});
+
+gulp.task('demo', function() {
+    gulp.src([
+        './node_modules/angular/angular.min.js',
+        './node_modules/angular-aria/angular-aria.min.js',
+        './node_modules/angular-animate/angular-animate.min.js',
+        './node_modules/angular-material/angular-material.min.js'
+    ])
+        .pipe(concat('vendor.js'))
+        .pipe(gulp.dest('./demo/js'));
+
+    gulp.src('./node_modules/angular-material/angular-material.min.css')
+        .pipe(concat('vendor.css'))
+        .pipe(gulp.dest('./demo/css'));
+
+    gulp.src('./dist/md-editable.js')
+        .pipe(gulp.dest('./demo/js'));
+
+    gulp.src('./dist/md-editable.css')
+        .pipe(gulp.dest('./demo/css'));
 });
 
 gulp.task('watch', function() {

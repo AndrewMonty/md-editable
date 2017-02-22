@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>md-editable demo</title>
+        <link rel="stylesheet" href="css/vendor.css">
+        <link rel="stylesheet" href="css/md-editable.css">
+        <style media="screen">
+            pre {
+                padding: 20px;
+                margin: 0;
+                background-color: #666;
+                color: #fafafa;
+                font-size: 16px;
+            }
+        </style>
+    </head>
+    <body ng-app="md-editable-demo">
+        <div ng-controller="DemoController as ctrl" layout="column">
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h2>
+                        <md-editable id="editable-title"
+                            mde-type="'text'"
+                            mde-property="'title'"
+                            mde-value="ctrl.title"
+                            on-update="ctrl.onUpdate(property, value)">
+                        </md-editable>
+                    </h2>
+                </div>
+            </md-toolbar>
+            <md-content class="md-padding" layout="row" layout-xs="column">
+
+                <md-card>
+                    <pre>mde-type="'text'"</pre>
+                    <md-card-content>
+                        <md-editable id="editable-text"
+                            mde-type="'text'"
+                            mde-label="'title:'"
+                            mde-property="'text'"
+                            mde-value="ctrl.text"
+                            on-update="ctrl.onUpdate(property, value)">
+                        </md-editable>
+                    </md-card-content>
+                </md-card>
+
+                <md-card>
+                    <pre>mde-type="'number'"</pre>
+                    <md-card-content>
+                        <md-editable id="editable-number"
+                            mde-type="'number'"
+                            mde-label="'number:'"
+                            mde-property="'number'"
+                            mde-value="ctrl.number"
+                            on-update="ctrl.onUpdate(property, value)">
+                        </md-editable>
+                    </md-card-content>
+                </md-card>
+
+                <md-card>
+                    <pre>mde-type="'select'"</pre>
+                    <md-card-content>
+                        <md-editable id="editable-select"
+                            mde-type="'select'"
+                            mde-label="'Character:'"
+                            mde-property="'select'"
+                            mde-value="ctrl.select.name"
+                            mde-options="ctrl.selectOptions"
+            				mde-option-display="'name'"
+                            on-update="ctrl.onUpdate(property, value)">
+                        </md-editable>
+                    </md-card-content>
+                </md-card>
+
+                <md-card>
+                    <pre>mde-type="'autocomplete'"</pre>
+                    <md-card-content>
+                        <md-editable id="editable-autocomplete"
+                            mde-type="'autocomplete'"
+                            mde-label="'Character:'"
+                            mde-property="'autoComplete'"
+                            mde-value="ctrl.autoComplete.name"
+                            mde-options="ctrl.autoCompleteOptions"
+            				mde-option-display="'name'"
+                            on-update="ctrl.onUpdate(property, value)">
+                        </md-editable>
+                    </md-card-content>
+                </md-card>
+            </md-content>
+        </div>
+    </body>
+    <footer>
+        <script type="text/javascript" src="js/vendor.js"></script>
+        <script type="text/javascript" src="js/md-editable.js"></script>
+        <script type="text/javascript" src="js/demo.js"></script>
+    </footer>
+</html>
