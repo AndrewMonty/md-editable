@@ -27,7 +27,7 @@ angular.module('md.editable')
                 ctrl.editable = typeof(ctrl.mdeEditable) == 'undefined' ? true : ctrl.mdeEditable;
                 ctrl.editing = false;
                 ctrl.selectedItem = false;
-                ctrl.newValue = false;
+                ctrl.newValue = ctrl.mdeValue;
                 filterOptions();
             }
 
