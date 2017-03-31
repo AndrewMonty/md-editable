@@ -28,6 +28,7 @@ angular.module('md.editable')
                 ctrl.editing = false;
                 ctrl.selectedItem = false;
                 ctrl.newValue = ctrl.mdeValue;
+                ctrl.searchText = '';
                 filterOptions();
             }
 
@@ -36,6 +37,7 @@ angular.module('md.editable')
                 if (changes.mdeValue)
                 {
                     ctrl.mdeValue = changes.mdeValue.currentValue;
+                    ctrl.newValue = ctrl.mdeValue;
                     ctrl.cancel();
                 }
                 if (changes.mdeOptions)

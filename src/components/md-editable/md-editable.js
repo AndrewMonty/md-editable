@@ -31,6 +31,7 @@ angular.module('md.editable')
                 if (changes.mdeValue)
                 {
                     ctrl.mdeValue = changes.mdeValue.currentValue;
+                    ctrl.newValue = ctrl.mdeValue;
                     ctrl.cancel();
                 }
                 if (changes.mdeOptions)
